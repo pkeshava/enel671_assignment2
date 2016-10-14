@@ -17,14 +17,15 @@ UpBoundStepSize=2./TraceR;
 
 %% Part 2 
 % Calculate weights for each filter order
+R1 = toeplitz(R);
+
 p = [0.5 0.25 0.125 0.0625 0.03125]';
 sigma_squared = 1.0;
 
-invR = inv(R);
-w2 = inv(R(1:2,1:2))*p(1:2);     
-w3 = inv(R(1:3,1:3))*p(1:3);
-w4 = inv(R(1:4,1:4))*p(1:4);
-w5 = inv(R(1:5,1:5))*p(1:5);
+w2 = inv(R1(1:2,1:2))*p(1:2);     
+w3 = inv(R1(1:3,1:3))*p(1:3);
+w4 = inv(R1(1:4,1:4))*p(1:4);
+w5 = inv(R1(1:5,1:5))*p(1:5);
 
 MMSE2 = sigma_squared - w2'*p(1:2);
 MMSE3 = sigma_squared - w3'*p(1:3);
