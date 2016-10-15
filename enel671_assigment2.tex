@@ -1,70 +1,87 @@
-% --------------------------------------------------------------
-% This is all preamble stuff that you don't have to worry about.
-% Head down to where it says "Start here"
-% --------------------------------------------------------------
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
 
-\documentclass[12pt]{article}
+\documentclass{article}
 
-\usepackage[margin=1in]{geometry}
-\usepackage{amsmath,amsthm,amssymb}
+\usepackage[margin=0.7in]{geometry}
+\usepackage{hyperref}
+\usepackage{float}    % Required to keep images where they are put
+\usepackage{graphicx} % Required for the inclusion of images
+\usepackage{listings} % Required for the inclusion of source code
+\usepackage{mathtools}
+\usepackage{enumitem} % Requred to use different characters for enumerated lists
+\usepackage{multirow}
+\usepackage[toc]{glossaries}
+\usepackage[titletoc]{appendix}
+\usepackage{wrapfig}
+\usepackage{subfigure}
 
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
+\setlength\parindent{0pt} % Removes all indentation from paragraphs
 
-\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{reflection}[2][Reflection]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{proposition}[2][Proposition]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+%\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
+
+\providecommand{\e}[1]{\ensuremath{\times 10^{#1}}} %use scientific notation
+
+%\usepackage{times} % Uncomment to use the Times New Roman font
+
+\usepackage[usenames,dvipsnames]{color}  % Required for colored syntax highlighting of code
+\definecolor{listinggray}{gray}{0.9}
+\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+\definecolor{DarkGreen}{rgb}{0.000000,0.392157,0.000000}
+\lstset{
+  backgroundcolor=\color{lbcolor},
+  tabsize=4,
+  language=c,
+  captionpos=b,
+  tabsize=3,
+  frame=lines,
+  numbers=left,
+  numberstyle=\tiny,
+  numbersep=5pt,
+  breaklines=true,
+  showstringspaces=false,
+  basicstyle=\footnotesize,
+%  identifierstyle=\color{magenta},
+  keywordstyle=\color[rgb]{0,0,1},
+  commentstyle=\color{DarkGreen},
+  stringstyle=\color{red}
+  }
+
+\usepackage{pdfpages}
+
+
+\usepackage[backend=bibtex, firstinits=false, style=ieee]{biblatex}
+\addbibresource{Bibliog.bib}
+
+\usepackage{verbatim}
+
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\title{ ENEL 671 Adaptive Signal Processing\\ Assignment 2 } % Title
+
+\author{
+          Pouyan    \textsc{Keshavarzian} \\} % Author names
+
+\date{\today} % Date for the reports
 
 \begin{document}
 
-% --------------------------------------------------------------
-%                         Start here
-% --------------------------------------------------------------
+\maketitle % Insert the title, author and date
 
-%\renewcommand{\qedsymbol}{\filledbox}
-
-\title{Homework Template}%replace X with the appropriate number
-\author{Pouyan Keshavarzian\\ %replace with your name
-ENEL671 Adpative Signal Processing} %if necessary, replace with your course title
-
-\maketitle
-
-\begin{theorem}{x.yz} %You can use theorem, proposition, exercise, or reflection here.  Modify x.yz to be whatever number you are proving
-Delete this text and write theorem statement here.
-\end{theorem}
-
-\begin{proof}
-Blah, blah, blah.  Here is an example of the \texttt{align} environment:
-%Note 1: The * tells LaTeX not to number the lines.  If you remove the *, be sure to remove it below, too.
-%Note 2: Inside the align environment, you do not want to use $-signs.  The reason for this is that this is already a math environment. This is why we have to include \text{} around any text inside the align environment.
-\begin{align*}
-\sum_{i=1}^{k+1}i & = \left(\sum_{i=1}^{k}i\right) +(k+1)\\
-& = \frac{k(k+1)}{2}+k+1 & (\text{by inductive hypothesis})\\
-& = \frac{k(k+1)+2(k+1)}{2}\\
-& = \frac{(k+1)(k+2)}{2}\\
-& = \frac{(k+1)((k+1)+1)}{2}.
-\end{align*}
-\end{proof}
-
-\begin{proposition}{x.yz}
-Let $n\in \Z$.
-\end{proposition}
-
-\begin{proof}[Disproof]%Whatever you put in the square brackets will be the label for the block of text to follow in the proof environment.
-Blah, blah, blah.  I'm so smart.
-\end{proof}
-
-% --------------------------------------------------------------
-%     You don't have to mess with anything below this line.
-% --------------------------------------------------------------
-
+\begin{center}
+  \[
+  R=
+    \begin{bmatrix}
+      2 & 1 & 0.75 & 0.5 & 0.25 \\
+      1 & 2 & 1 & 0.75 & 0.5 \\
+      0.75 & 1 & 2 & 1 & 0.75 \\
+      0.5 & 0.75 & 1 & 2 & 1 \\
+      0.25 & 0.5 & 0.75 & 1 & 2
+    \end{bmatrix}
+  \]
+\end{center}
 \end{document}
