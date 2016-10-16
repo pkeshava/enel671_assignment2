@@ -12,8 +12,8 @@ for M=2:5
     % eigenvectors is the trace of the matrix
     TraceR(M-1)=sum(diag(D));
 end
-
-UpBoundStepSize=2./TraceR;
+eigenvalue_spread
+UpBoundStepSize=2./TraceR
 
 %% Part 2 
 % Calculate weights for each filter order

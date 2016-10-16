@@ -86,11 +86,29 @@ ENEL 671: Adaptive Signal Processing}
     \end{bmatrix}
   \]
 \end{center}
+
+\begin{table}[H]
+\centering
+ \begin{tabular}{ | c | c | c |}
+    \hline
+    Filter Order & Eigenvalue Spread & Corresponding Upper Bound, $\mu$\\
+    \hline\hline
+    2        & 3.0 & 0.5 \\
+    \hline
+    3        & 4.2088 & 0.333 \\
+    \hline
+    4        & 5.0396 & 0.25\\
+    \hline
+    5        & 5.6864 & 0.2\\
+    \hline
+  \end{tabular}
+  \caption{ Power Supply Technical Specifications }
+  \label{table:powerspecs}
+\end{table}
+You could not use a value close to the upperbound of the second order
+filter for the fifth order because it exceeds the upper bound
+therefore the filter would diverge.\\
 \end{problem}
-
-\begin{proof}
-
-\end{proof}
 
 \begin{problem}{2}
 \text{ }\\
@@ -105,11 +123,35 @@ P=
   \end{bmatrix}
 \]
 \end{problem}
-
-\begin{proof}
-
-\end{proof}
-
-
+\text{The tap-input vectors for their corresponding filter orders are calculated below}
+\[
+W_02=
+    \begin{bmatrix}
+    0.25\\
+    0\\
+    \end{bmatrix}%\hspace*{20pt} % to increase the horizontal space
+%
+W_03=
+    \begin{bmatrix}
+    0.2571\\
+    0.0.0179\\
+    -0.0420\\
+    \end{bmatrix}
+W_04=
+    \begin{bmatrix}
+    0.2575\\
+    0.0219\\
+    -0.0325\\
+    -0.0251\\
+    \end{bmatrix}
+W_05=
+    \begin{bmatrix}
+    0.2577\\
+    0.0217\\
+    -0.0331\\
+    -0.0266\\
+    0.0037\\
+    \end{bmatrix}
+\]
 
 \end{document}
