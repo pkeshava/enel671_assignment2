@@ -69,13 +69,10 @@
 \title{Assignment 2}
 \author{Pouyan Keshavarzian\\
 ENEL 671: Adaptive Signal Processing}
-
 \maketitle
 
 \begin{problem}{1}
-\text{}
-\begin{center}
-  \[
+\[
   R=
     \begin{bmatrix}
       2 & 1 & 0.75 & 0.5 & 0.25 \\
@@ -84,9 +81,7 @@ ENEL 671: Adaptive Signal Processing}
       0.5 & 0.75 & 1 & 2 & 1 \\
       0.25 & 0.5 & 0.75 & 1 & 2
     \end{bmatrix}
-  \]
-\end{center}
-
+\]
 \begin{table}[H]
 \centering
  \begin{tabular}{ | c | c | c |}
@@ -102,8 +97,8 @@ ENEL 671: Adaptive Signal Processing}
     5        & 5.6864 & 0.2\\
     \hline
   \end{tabular}
-  \caption{ Power Supply Technical Specifications }
-  \label{table:powerspecs}
+  \caption{Problem 1 Calculations}
+  \label{table:calcs}
 \end{table}
 You could not use a value close to the upperbound of the second order
 filter for the fifth order because it exceeds the upper bound
@@ -111,7 +106,7 @@ therefore the filter would diverge.\\
 \end{problem}
 
 \begin{problem}{2}
-\text{ }\\
+\text{ }
 \[
 P=
   \begin{bmatrix}
@@ -121,9 +116,9 @@ P=
     0.0625\\
     0.03125
   \end{bmatrix}
-\]
+\]\\
 \end{problem}
-\text{The tap-input vectors for their corresponding filter orders are calculated below}
+\text{The calculated tap-input vectors for their corresponding filter orders are shown below: }\\
 \[
 W_02=
     \begin{bmatrix}
@@ -153,5 +148,23 @@ W_05=
     0.0037\\
     \end{bmatrix}
 \]
-
+\begin{table}[H]
+\centering
+ \begin{tabular}{ | c | c | c |}
+    \hline
+    Filter Order & MMSE \\
+    \hline\hline
+    2        & 0.8750 \\
+    \hline
+    3        & 0.8723 \\
+    \hline
+    4        & 0.8714 \\
+    \hline
+    5        & 0.8714 \\
+    \hline
+  \end{tabular}
+  \caption{Problem 2 Calculations}
+  \label{table:calcs}
+\end{table}
+Filter order 4 and 5 give almost an identical MMSE as the filter has converged.\\
 \end{document}
