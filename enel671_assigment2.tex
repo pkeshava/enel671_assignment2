@@ -13,37 +13,35 @@
 \usepackage[titletoc]{appendix}
 \usepackage{wrapfig}
 \usepackage{subfigure}
+\usepackage[]{mcode} % Matlab code
 \setlength\parindent{0pt} % Removes all indentation from paragraphs
 %\renewcommand{\labelenumi}{\alph{enumi}.} % Make numbering in the enumerate environment by letter rather than number (e.g. section 6)
 \providecommand{\e}[1]{\ensuremath{\times 10^{#1}}} %use scientific notation
 %\usepackage{times} % Uncomment to use the Times New Roman font
-\usepackage[usenames,dvipsnames]{color}  % Required for colored syntax highlighting of code
-\definecolor{listinggray}{gray}{0.9}
-\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
-\definecolor{DarkGreen}{rgb}{0.000000,0.392157,0.000000}
-\lstset{
-  backgroundcolor=\color{lbcolor},
-  tabsize=4,
-  language=c,
-  captionpos=b,
-  tabsize=3,
-  frame=lines,
-  numbers=left,
-  numberstyle=\tiny,
-  numbersep=5pt,
-  breaklines=true,
-  showstringspaces=false,
-  basicstyle=\footnotesize,
+%\usepackage[usenames,dvipsnames]{color}  % Required for colored syntax highlighting of code
+%Commenting out below section because of mcode package
+%\definecolor{listinggray}{gray}{0.9}
+%\definecolor{lbcolor}{rgb}{0.9,0.9,0.9}
+%\definecolor{DarkGreen}{rgb}{0.000000,0.392157,0.000000}
+%\lstset{
+%  backgroundcolor=\color{lbcolor},
+%  tabsize=4,
+%  language=c,
+%  captionpos=b,
+%  tabsize=3,
+%  frame=lines,
+%  numbers=left,
+%  numberstyle=\tiny,
+%  numbersep=5pt,
+%  breaklines=true,
+%  showstringspaces=false,
+%  basicstyle=\footnotesize,
 %  identifierstyle=\color{magenta},
-  keywordstyle=\color[rgb]{0,0,1},
-  commentstyle=\color{DarkGreen},
-  stringstyle=\color{red}
-  }
+%  keywordstyle=\color[rgb]{0,0,1},
+%  commentstyle=\color{DarkGreen},
+%  stringstyle=\color{red}
+%  }
 \usepackage{pdfpages}
-%\loadglsentries[main]{glossary}
-%\makeglossaries
-\usepackage[backend=bibtex, firstinits=false, style=ieee]{biblatex}
-\addbibresource{Bibliog.bib}
 \usepackage{verbatim}
 %%Definitions Below are from 'Weekly Homework 3 template'
 \newcommand{\N}{\mathbb{N}}
@@ -167,4 +165,15 @@ W_05=
   \label{table:calcs}
 \end{table}
 Filter order 4 and 5 give almost an identical MMSE as the filter has converged.\\
+\newpage
+
+\begin{appendices}
+
+  %----------------------------------------------------------------------------------------
+  %	APPENDIX
+  %---------------------------------------------------------------------------------------
+  \section{Matlab Code}\label{app:code}
+  \lstinputlisting{/Users/Pouyan/Builds/enel671/enel671_assignment2/assignment2.m}
+\end{appendices}
+
 \end{document}
